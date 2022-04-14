@@ -10,7 +10,7 @@ const validate = values => {
         errors.email = 'Field required';
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
         .test(values.emailField)) {
-        errors.email = 'Invalid email address';
+        errors.email = 'Username should be an email';
     }
     return errors;
 }
@@ -52,7 +52,7 @@ function App() {
                 <div>Password</div>
                 <input 
                     id='pswField' 
-                    type='text' 
+                    type='password' 
                     onChange={formik.handleChange} 
                     onBlur={formik.handleBlur}
                     value={formik.values.pswField}
